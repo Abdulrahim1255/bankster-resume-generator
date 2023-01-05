@@ -135,7 +135,8 @@ const PdfDownload = ({ message }) => {
     console.log(item.buffer);
     const pdf =  new jsPDF()
 
-    pdf.addImage(logo, "PNG", 10, 1, 50, 50);
+    pdf.addImage(logo, "PNG", 10, 5, 40, 40);
+
     const string = renderToString(<Prints /> );
     // pdf.html(string,12, 53);\
     console.log(message,'fgf')
