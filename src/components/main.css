@@ -1,0 +1,43 @@
+body{
+}
+
+.label{
+margin-right: 3rem;
+align-items: flex-start;
+text-align: start;
+
+
+}
+.input{
+    outline: none;
+    padding: 14px 18px;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    border: 1px solid #dadce0;
+    font-size:18px;
+    border-radius:5px;
+    }
+    .input:focus{
+        border: 2px solid royalblue;
+        } 
+
+img{
+    width:20%;
+}
+.input-div{
+width: 50%;
+margin:auto;
+}
+h1{
+  font-family: 'Barlow', sans-serif;
+  font-size:3em;
+  font-weight: 400;
+}
+.textfield{
+ margin: 1% 0 !important;       
+}
+
+.table-div{
+    width:50%;
+    margin:2% auto;
+}
