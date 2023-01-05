@@ -4,7 +4,7 @@ import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 import { renderToString } from "react-dom/server";
 import Button from "@mui/material/Button";
 // import pdfe from "../assets/pdf.pdf";
-import logo from "../assets/newlogo.png";
+import logo from "../assets/pdflogo.png";
 import Uploadcv from "./Uploadcv";
 import {jsPDF} from "jspdf";
 import './pdf.css'
@@ -135,7 +135,7 @@ const PdfDownload = ({ message }) => {
     console.log(item.buffer);
     const pdf =  new jsPDF()
 
-    pdf.addImage(logo, "PNG", 10, 5, 40, 40);
+    pdf.addImage(logo, "PNG", 10, 5, 40, 30);
 
     const string = renderToString(<Prints /> );
     // pdf.html(string,12, 53);\
