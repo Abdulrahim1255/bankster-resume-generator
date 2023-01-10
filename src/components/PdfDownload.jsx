@@ -283,10 +283,10 @@ const PdfDownload = ({ message }) => {
 
    
       theme: 'grid',
-      tableLineColor: ['black'],
-      tableLineWidth: 0.50,
+      // tableLineColor: ['black'],
+      // tableLineWidth: 0.50,
       headStyles:{fillColor:'#f5297a'},
-      bodyStyles: {lineColor: 'black',lineWidth:0.50},
+      // bodyStyles: {lineColor: 'black',lineWidth:0.50},
       margin: { top: 40 },
 
       head: [["Particulars", "Description"]],
