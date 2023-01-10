@@ -4,9 +4,9 @@ import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 import { renderToString } from "react-dom/server";
 import Button from "@mui/material/Button";
 // import pdfe from "../assets/pdf.pdf";
-import logo from "../assets/pdflogo.png";
+import logo from "../assets/banksterfull.png";
 import Uploadcv from "./Uploadcv";
-import {jsPDF} from "jspdf";
+import { jsPDF } from "jspdf";
 import './pdf.css'
 import styled from 'styled-components';
 import Test from "./Test";
@@ -16,40 +16,45 @@ import './pdfdownload.css'
 const Input = styled('input')({
   display: 'none',
 });
-const PdfDownloadd=({message})=>{
-  useEffect(()=>{
-    var arrBody=[]
-    message.map((item)=>{
-      var datar=item.firstName+","+item.lastName
-      var arrBodyInn=[]
+
+
+const PdfDownloadd = ({ message }) => {
+
+
+
+  useEffect(() => {
+    var arrBody = []
+    message.map((item) => {
+      var datar = item.firstName + "," + item.lastName
+      var arrBodyInn = []
       arrBodyInn.push(datar)
       arrBody.push(arrBodyInn)
       // autoTable(pdf, {
-      
-  
+
+
       //   head: [["key","Value"]],
       //   body: [
       //     [item.lastName, ],
       //     [item.lastName, ],
-         
-         
+
+
       //   ],
       // }
-      
+
       // )
     })
-  
-    console.log(arrBody+"","tt")
-  },[0])
- 
-  return(
+
+    console.log(arrBody + "", "tt")
+  }, [0])
+
+  return (
     <></>
   )
 }
 
 
 const PdfDownload = ({ message }) => {
-  const [updateStatus,setUpdateStatus] = React.useState(null)
+  const [updateStatus, setUpdateStatus] = React.useState(null)
 
 
   const [item, setItem] = useState([]);
@@ -66,23 +71,23 @@ const PdfDownload = ({ message }) => {
 
     setItem(byteArray);
   };
-  
+
 
 
   const Prints = () => (
-    <div > 
+    <div >
 
 
 
-  
 
-     <table id='#my-table' className="mytbale">  
-     <tr>
-        <th> SrNo</th>
-        <th>Key</th>
-        <th>Value</th>
-      </tr>
-      {/* {
+
+      <table id='#my-table' className="mytbale">
+        <tr>
+          <th> SrNo</th>
+          <th>Key</th>
+          <th>Value</th>
+        </tr>
+        {/* {
       message.map((item,i)=>{
         console.log(message,"asdf")
         console.log(item,"item")
@@ -97,13 +102,13 @@ const PdfDownload = ({ message }) => {
        )
         })
       } */}
-     
-     </table>
+
+      </table>
 
 
 
 
-{/* <table className="ui celled table" >
+      {/* <table className="ui celled table" >
   <thead>
     <tr><th>Name</th>
     <th>Age</th>
@@ -133,42 +138,42 @@ const PdfDownload = ({ message }) => {
 
   async function createPdf() {
     console.log(item.buffer);
-    const pdf =  new jsPDF()
+    const pdf = new jsPDF()
 
-    pdf.addImage(logo, "PNG", 10, 5, 40, 30);
+    pdf.addImage(logo, "PNG", 10, 5, 40, 20);
 
-    const string = renderToString(<Prints /> );
+    const string = renderToString(<Prints />);
     // pdf.html(string,12, 53);\
-    console.log(message,'fgf')
+    console.log(message, 'fgf')
 
-    var arrBody=[]
-    var arrBodyOut=[]
-   
-    var arrBodyOut0=[]
+    var arrBody = []
+    var arrBodyOut = []
 
-    var arrBodyOut1=[]
-    var arrBodyOut2=[]
-    var arrBodyOut3=[]
-    var arrBodyOut4=[]
-    var arrBodyOut5=[]
-    var arrBodyOut6=[]
-    var arrBodyOut7=[]
-    var arrBodyOut8=[]
-    var arrBodyOut9=[]
-    var arrBodyOut10=[]
-    var arrBodyOut11=[]
-    var arrBodyOut12=[]
-    var arrBodyOut13=[]
-    var arrBodyOut14=[]
-    var arrBodyOut15=[]
-    var arrBodyOut16=[]
-    var arrBodyOut17=[]
-    var arrBodyOut18=[]
-    var arrBodyOut19=[]
-    var arrBodyOut20=[]
-    var arrBodyOut21=[]
-    var arrBodyOut22=[]
-   
+    var arrBodyOut0 = []
+
+    var arrBodyOut1 = []
+    var arrBodyOut2 = []
+    var arrBodyOut3 = []
+    var arrBodyOut4 = []
+    var arrBodyOut5 = []
+    var arrBodyOut6 = []
+    var arrBodyOut7 = []
+    var arrBodyOut8 = []
+    var arrBodyOut9 = []
+    var arrBodyOut10 = []
+    var arrBodyOut11 = []
+    var arrBodyOut12 = []
+    var arrBodyOut13 = []
+    var arrBodyOut14 = []
+    var arrBodyOut15 = []
+    var arrBodyOut16 = []
+    var arrBodyOut17 = []
+    var arrBodyOut18 = []
+    var arrBodyOut19 = []
+    var arrBodyOut20 = []
+    var arrBodyOut21 = []
+    var arrBodyOut22 = []
+
     arrBodyOut0.push("Position Applying For & Location")
     arrBodyOut0.push(message[0].positionApplyingLocation)
     arrBody.push(arrBodyOut0)
@@ -178,10 +183,10 @@ const PdfDownload = ({ message }) => {
     arrBody.push(arrBodyOut1)
     //age
 
- arrBodyOut2.push("Name of the Candidate" )
- arrBodyOut2.push(message[0].nameoftheCandidate)
- arrBody.push(arrBodyOut2)
- //age //age
+    arrBodyOut2.push("Name of the Candidate")
+    arrBodyOut2.push(message[0].nameoftheCandidate)
+    arrBody.push(arrBodyOut2)
+    //age //age
     arrBodyOut3.push("Contact Number")
     arrBodyOut3.push(message[0].contactNumber)
     arrBody.push(arrBodyOut3)
@@ -194,11 +199,11 @@ const PdfDownload = ({ message }) => {
     arrBodyOut5.push(message[0].age)
     arrBody.push(arrBodyOut5)
     //age //age
-    arrBodyOut6.push("Highest Qualification" )
+    arrBodyOut6.push("Highest Qualification")
     arrBodyOut6.push(message[0].highestQualification)
     arrBody.push(arrBodyOut6)
     //age //age
-    arrBodyOut7.push("Current Location" )
+    arrBodyOut7.push("Current Location")
     arrBodyOut7.push(message[0].currentLocation)
     arrBody.push(arrBodyOut7)
     //age //age
@@ -214,7 +219,7 @@ const PdfDownload = ({ message }) => {
     arrBodyOut10.push(message[0].currentProduct)
     arrBody.push(arrBodyOut10)
     //age //age
-    arrBodyOut11.push("Avg Ticket Size" )
+    arrBodyOut11.push("Avg Ticket Size")
     arrBodyOut11.push(message[0].avgTicketSize)
     arrBody.push(arrBodyOut11)
     //age //age
@@ -246,7 +251,7 @@ const PdfDownload = ({ message }) => {
     arrBodyOut18.push(message[0].currentCTC)
     arrBody.push(arrBodyOut18)
     //age //age
-    arrBodyOut19.push("Expected CTC " )
+    arrBodyOut19.push("Expected CTC ")
     arrBodyOut19.push(message[0].expectedCTC)
     arrBody.push(arrBodyOut19)
     //age //age
@@ -261,95 +266,111 @@ const PdfDownload = ({ message }) => {
     arrBodyOut22.push("Remarks ")
     arrBodyOut22.push(message[0].remarks)
     arrBody.push(arrBodyOut22)
-    
 
-    message.map((item,index)=>{
-      var datar=item.firstName+","+item.lastName
-      var arrBodyInn=[]
+
+    message.map((item, index) => {
+      var datar = item.firstName + "," + item.lastName
+      var arrBodyInn = []
 
       arrBodyInn.push(item.firstName)
       arrBodyInn.push(item.lastName)
       arrBody.push(arrBodyInn)
-    
+
     })
-    console.log([arrBody],"abc");
+    console.log([arrBody], "abc");
     autoTable(pdf, {
-      
+
+
+   
+      theme: 'grid',
+      // tableLineColor: ['black'],
+      // tableLineWidth: 0.50,
+      headStyles:{fillColor:'#f5297a'},
+      // bodyStyles: {lineColor: 'black',lineWidth:0.50},
       margin: { top: 40 },
-        head: [["key","Value"]],
-        body: arrBody,
-      }
-      
-      )
-      pdf.setTextColor(100);
-      pdf.setFontSize(8);
-      // pdf.text("Add -.", 10, 2);
-      pdf.text("Address: Unit No -3, H 272. Bharat Tower, Palam Vihar, Near Krishna Chowk, Gurugram -122017 ", 10, 285);
-      // pdf.text("    ", 30, 275);
-      pdf.text("Contact: 7011724492", 10, 290);
+
+      head: [["Particulars", "Description"]],
+      body: arrBody
+    }
+
+    )
+    pdf.setFontSize(13);
+    pdf.setFont("helvetica", "bold");
+
+    pdf.text("Banksterindia - A leading job site for BFSI Industry. ", 40, 250);
     
+    pdf.setTextColor('black');
+    pdf.setFontSize(8);
+    pdf.setFont("helvetica", "bold");
+    pdf.text("Address: Unit No -3, H 272. Bharat Tower, ", 136, 270);
+    pdf.text("   Palam Vihar, Near Krishna Chowk, Gurugram -122017", 134, 275);
+
+    pdf.text("   banksterindia@gmail.com ", 134, 280);
+
+    pdf.text("Contact: 91 70117 24492 ", 136, 285);
+
 
 
 
 
     const firstDonorPdfBytes = pdf.output("arraybuffer")
-        const secondDonorPdfBytes = item.buffer;
-    
-        const firstDonorPdfDoc = await PDFDocument.load(firstDonorPdfBytes);
-        const secondDonorPdfDoc = await PDFDocument.load(secondDonorPdfBytes);
-    
-        const pdfDoc = await PDFDocument.create();
-    
-      const [firstDonorPage] = await pdfDoc.copyPages(firstDonorPdfDoc, [0])
-    
-      pdfDoc.addPage(firstDonorPage )
-    
-    
-    console.log(secondDonorPdfDoc.getPages(),"pages")
-    
+    const secondDonorPdfBytes = item.buffer;
+
+    const firstDonorPdfDoc = await PDFDocument.load(firstDonorPdfBytes);
+    const secondDonorPdfDoc = await PDFDocument.load(secondDonorPdfBytes);
+
+    const pdfDoc = await PDFDocument.create();
+
+    const [firstDonorPage] = await pdfDoc.copyPages(firstDonorPdfDoc, [0])
+
+    pdfDoc.addPage(firstDonorPage)
+
+
+    console.log(secondDonorPdfDoc.getPages(), "pages")
+
     for (let index = 0; index < secondDonorPdfDoc.getPages().length; index++) {
       // const element = array[index];
-      const [secondDonorPage] = await pdfDoc.copyPages(secondDonorPdfDoc,[index])
-      pdfDoc.addPage( secondDonorPage)
-      
+      const [secondDonorPage] = await pdfDoc.copyPages(secondDonorPdfDoc, [index])
+      pdfDoc.addPage(secondDonorPage)
+
     }
-    
-    
-    
-    
-    
-        const pdfBytes = await pdfDoc.save();
-    
-        require("downloadjs")(pdfBytes, message.firstName, "application/pdf");
- 
+
+
+
+
+
+    const pdfBytes = await pdfDoc.save();
+
+    require("downloadjs")(pdfBytes, message.firstName, "application/pdf");
+
   }
 
   return (
     <div>
       <div>
-        <div className="mt-4 mb-2" style={{textAlign:"center"}}>
-        {
-          updateStatus&&<p style={{textAlign:"center"}}><b>{updateStatus}</b></p>
-        }
-        <label htmlFor="contained-button-file">
-        <Input 
-          type="file"
-          name="imgUpload"
-          accept=".pdf"
-          onChange={getBase64}
-          id="contained-button-file" 
-        />
-        <Button color="secondary" variant="outlined" component="span" endIcon={<CameraAltIcon />}>
-        Upload Resume PDF
-        </Button>
-        </label>
+        <div className="mt-4 mb-2" style={{ textAlign: "center" }}>
+          {
+            updateStatus && <p style={{ textAlign: "center" }}><b>{updateStatus}</b></p>
+          }
+          <label htmlFor="contained-button-file">
+            <Input
+              type="file"
+              name="imgUpload"
+              accept=".pdf"
+              onChange={getBase64}
+              id="contained-button-file"
+            />
+            <Button color="secondary" variant="outlined" component="span" endIcon={<CameraAltIcon />}>
+              Upload Resume PDF
+            </Button>
+          </label>
         </div>
-        <Button     sx={{
-        m:'2rem',
-        width: '30ch',
-      }} onClick={createPdf} variant="contained" color="secondary">
-        Download
-      </Button>
+        <Button sx={{
+          m: '2rem',
+          width: '30ch',
+        }} onClick={createPdf} variant="contained" color="secondary">
+          Download
+        </Button>
         {/* <input
         style={{
           border: '2px solid rgb(156,39,176)',
@@ -367,7 +388,7 @@ const PdfDownload = ({ message }) => {
 
 
 
-    
+
 
 
 
