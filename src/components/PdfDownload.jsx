@@ -294,7 +294,11 @@ const PdfDownload = ({ message }) => {
     }
 
     )
+    pdf.setFontSize(13);
+    pdf.setFont("helvetica", "bold");
 
+    pdf.text("Banksterindia - A leading job site for BFSI Industry. ", 40, 250);
+    
     pdf.setTextColor('black');
     pdf.setFontSize(8);
     pdf.setFont("helvetica", "bold");
