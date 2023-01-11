@@ -12,10 +12,10 @@ import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import { IconButton } from "@mui/material";
  import { Dayjs } from 'dayjs';
 // import TextField from '@mui/material/TextField';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+import { LocalizationProvider } from '@mui/x-date-pickers'
+import date from 'date-and-time';
 
 
 
@@ -47,7 +47,7 @@ const Main = () => {
   const [reasonforChange,setReasonforChange] = useState([]);
   const [remarks,setRemarks] = useState([]);
 
-
+const [actualDate,setActualDate] = React.useState("")
 
   const [message, setMessage] = useState([]);
 
@@ -88,19 +88,39 @@ const Main = () => {
         <TextField id="outlined-basic" variant="outlined"    fullWidth className="textfield"    label="Position Applying For & Location"   value={positionApplyingLocation}  onChange={(event) => {
             setPositionApplyingLocation(event.target.value);}} />
 
-<LocalizationProvider dateAdapter={AdapterDayjs}>
+<section className="my-3">
+        <LocalizationProvider 
+        
+        dateAdapter={AdapterDateFns} >
+        <DesktopDatePicker
+        label="Start Date"
+        inputFormat="dd/MM/yyyy"
+        value={actualDate}
+        onChange={(newValue) => {
+          let d = date.format(newValue, 'DD/MM/YYYY'); 
+          console.log(d)
+          setDayOfSourcing(d)
+          setActualDate(newValue);
+        }}
+        renderInput={(params) => <TextField fullWidth {...params} />}
+      />
+      </LocalizationProvider>
+      </section>
+{/* <LocalizationProvider dateAdapter={AdapterDateFns}>
 <DatePicker
           disableFuture
           label="Responsive"
+          inputFormat="dd/MM/yyyy"
           // inputFormat={['day', 'month', 'year']}
           // views={['day', 'month', 'year']}
           value={dayOfSourcing}
           onChange={(newValue) => {
+            console.log(newValue)
             setDayOfSourcing(newValue);
           }}
           renderInput={(params) => <TextField {...params} />}
         />
-    </LocalizationProvider>
+    </LocalizationProvider> */}
 
         {/* <TextField id="outlined-basic" variant="outlined" fullWidth className="textfield"        label="Day Of Sourcing"   value={dayOfSourcing}  onChange={(event) => {
             setDayOfSourcing(event.target.value);}}/> */}
