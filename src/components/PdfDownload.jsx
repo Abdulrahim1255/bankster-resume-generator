@@ -271,16 +271,19 @@ const PdfDownload = ({ message }) => {
     arrBodyOut22.push(message[0].remarks)
     arrBody.push(arrBodyOut22)
 
+    if(message.length>0 && message[0].firstName.length>0 && message[0].lastName.length>0){
+      message.map((item, index) => {
+        var datar = item.firstName + "," + item.lastName
+        var arrBodyInn = []
+  
+        arrBodyInn.push(item.firstName)
+        arrBodyInn.push(item.lastName)
+        arrBody.push(arrBodyInn)
+  
+      })
+    }
 
-    message.map((item, index) => {
-      var datar = item.firstName + "," + item.lastName
-      var arrBodyInn = []
 
-      arrBodyInn.push(item.firstName)
-      arrBodyInn.push(item.lastName)
-      arrBody.push(arrBodyInn)
-
-    })
     console.log([arrBody], "abc");
     autoTable(pdf, {
 

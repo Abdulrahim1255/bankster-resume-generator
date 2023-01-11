@@ -74,7 +74,7 @@ const [actualDate,setActualDate] = React.useState("")
       totalYearsofExp,relevantYearsofExp,currentCTC,expectedCTC,noticePeriod,reasonforChange,remarks   
     };
     setMessage([...message, obj]);
-    console.log(message, "message");
+    console.log(obj, "message");
   
   };
   console.log(message)
