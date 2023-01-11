@@ -29,19 +29,7 @@ const PdfDownloadd = ({ message }) => {
       var arrBodyInn = []
       arrBodyInn.push(datar)
       arrBody.push(arrBodyInn)
-      // autoTable(pdf, {
-
-
-      //   head: [["key","Value"]],
-      //   body: [
-      //     [item.lastName, ],
-      //     [item.lastName, ],
-
-
-      //   ],
-      // }
-
-      // )
+     
     })
 
     console.log(arrBody + "", "tt")
@@ -312,6 +300,8 @@ const PdfDownload = ({ message }) => {
     pdf.text("   banksterindia@gmail.com ", 134, 280);
 
     pdf.text("Contact: 91 70117 24492 ", 136, 285);
+    pdf.text("http://www.banksterindia.com", 90, 290);
+
 
 
 
