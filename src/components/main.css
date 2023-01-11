@@ -36,6 +36,9 @@ h1{
 .textfield{
  margin: 1% 0 !important;       
 }
+.LocalizationProvider{
+    margin: 1% 0 !important;       
+   }
 
 .table-div{
     width:50%;
