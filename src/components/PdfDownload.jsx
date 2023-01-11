@@ -141,6 +141,10 @@ const PdfDownload = ({ message }) => {
     const pdf = new jsPDF()
 
     pdf.addImage(logo, "PNG", 10, 5, 40, 20);
+    pdf.setFontSize(13);
+    pdf.setFont("helvetica", "bold");
+
+    pdf.text("Banksterindia - A leading job site for BFSI Industry ", 40, 32);
 
     const string = renderToString(<Prints />);
     // pdf.html(string,12, 53);\
@@ -294,10 +298,7 @@ const PdfDownload = ({ message }) => {
     }
 
     )
-    pdf.setFontSize(13);
-    pdf.setFont("helvetica", "bold");
-
-    pdf.text("Banksterindia - A leading job site for BFSI Industry. ", 40, 250);
+    
     
     pdf.setTextColor('black');
     pdf.setFontSize(8);
@@ -341,7 +342,7 @@ const PdfDownload = ({ message }) => {
 
     const pdfBytes = await pdfDoc.save();
 
-    require("downloadjs")(pdfBytes, message.firstName, "application/pdf");
+    require("downloadjs")(pdfBytes, `bankster_${message[0].nameoftheCandidate}`, "application/pdf");
 
   }
 

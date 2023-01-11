@@ -10,12 +10,21 @@ import TextField from "@mui/material/TextField";
 import './main.css'
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import { IconButton } from "@mui/material";
+ import { Dayjs } from 'dayjs';
+// import TextField from '@mui/material/TextField';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+
+
+
+
 // var message=[]
 const Main = () => {
   const [firstName, setFirstName] = useState([]);
   const [lastName, setLastName] = useState([]);
   const [positionApplyingLocation, setPositionApplyingLocation] = useState([]);
-  const [dayOfSourcing, setDayOfSourcing] = useState([]);
+  const [dayOfSourcing, setDayOfSourcing] = useState();
   const [nameoftheCandidate, setNameoftheCandidate] = useState([]);
   const [contactNumber,setContactNumber] = useState([]);
   const [emailId,setEmailId] = useState([]);
@@ -78,8 +87,27 @@ const Main = () => {
 
         <TextField id="outlined-basic" variant="outlined"    fullWidth className="textfield"    label="Position Applying For & Location"   value={positionApplyingLocation}  onChange={(event) => {
             setPositionApplyingLocation(event.target.value);}} />
-        <TextField id="outlined-basic" variant="outlined" fullWidth className="textfield"        label="Day Of Sourcing"   value={dayOfSourcing}  onChange={(event) => {
-            setDayOfSourcing(event.target.value);}}/>
+
+<LocalizationProvider dateAdapter={AdapterDayjs}>
+<DatePicker
+          disableFuture
+          label="Responsive"
+          // inputFormat={['day', 'month', 'year']}
+          // views={['day', 'month', 'year']}
+          value={dayOfSourcing}
+          onChange={(newValue) => {
+            setDayOfSourcing(newValue);
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        />
+    </LocalizationProvider>
+
+        {/* <TextField id="outlined-basic" variant="outlined" fullWidth className="textfield"        label="Day Of Sourcing"   value={dayOfSourcing}  onChange={(event) => {
+            setDayOfSourcing(event.target.value);}}/> */}
+
+
+
+
         <TextField id="outlined-basic" variant="outlined"  fullWidth className="textfield"       label="Name of the Candidate"  value={nameoftheCandidate}   onChange={(event) => {
             setNameoftheCandidate(event.target.value);}}/>
         <TextField id="outlined-basic" variant="outlined"  fullWidth className="textfield"       label="Contact Number"   value={contactNumber}  onChange={(event) => {
