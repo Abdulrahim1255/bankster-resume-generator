@@ -369,7 +369,12 @@ const PdfDownload = ({ message }) => {
         <Button sx={{
           m: '2rem',
           width: '30ch',
-        }} onClick={createPdf} variant="contained" color="secondary">
+        }} onClick={()=>{
+          console.log(message)
+          if(message.length>0){
+            createPdf()
+          }
+        }} variant="contained" color="secondary">
           Download
         </Button>
         {/* <input
